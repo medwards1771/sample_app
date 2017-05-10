@@ -33,4 +33,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
+
+  test "should render rails_default" do
+    get static_pages_home_url
+    assert_template 'layouts/_rails_default'
+  end
 end
